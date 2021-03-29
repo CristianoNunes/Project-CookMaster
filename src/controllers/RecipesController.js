@@ -53,7 +53,6 @@ const removeIdRecipe = async (req, res) => {
 const updateIdImage = async (req, res) => {
   const { id } = req.params;
   const image = `localhost:3000/images/${id}.jpeg`;
-  console.log(req.body, req.file);
   const recipe = await RecipesServices.findByIdRecipe(id);
   if (recipe) {
     const updatedRecipe = await RecipesServices.updateIdImage(recipe, image);
